@@ -9,3 +9,11 @@ packages:
   - screen
   - zip
   - unzip
+
+db_packages:
+  - mariadb-server
+  - python3-pymysql
+
+docker_repo_uri: "https://download.docker.com/linux/debian"
+docker_keyring_path: "/etc/apt/keyrings/docker.asc"
+docker_sources_path: "/etc/apt/sources.list.d/docker.sources"

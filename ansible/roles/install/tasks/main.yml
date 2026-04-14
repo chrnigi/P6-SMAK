@@ -37,3 +37,9 @@
   ansible.builtin.package:
     name: "{{ packages }}"
     state: present
+
+- name: Ensure database packages are installed
+  ansible.builtin.package:
+    name: "{{ db_packages }}"
+    state: present
+  when: "'185' in inventory_hostname"
