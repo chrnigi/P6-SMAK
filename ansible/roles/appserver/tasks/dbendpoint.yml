@@ -32,6 +32,16 @@
     group: root
     mode: "0640"
 
+- name: Ensure password correct
+  ansible.builtin.lineinfile:
+    path: "{{ file_to_modify }}"
+    regexp: '^spring.datasource.url='
+    line: 'spring.datasource.url=jdbc:mariadb://192.168.50.18:3306/smak'
+    create: true
+    owner: root
+    group: root
+    mode: "0640"
+
 - name: Ensure mvnw is executable
   ansible.builtin.file:
     path: "{{ app_dir }}/mvnw"

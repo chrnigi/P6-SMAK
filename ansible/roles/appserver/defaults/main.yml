@@ -19,5 +19,8 @@ file_to_modify: "{{ app_dir }}/src/main/resources/application.properties"
 # how to start your program after mvn package
 start_command: "java -jar target/chess-0.0.1-SNAPSHOT.jar"
 
-smak_username: "username"
-smak_password: "password"
+smak_username: "smak"
+smak_password: "smaksmak1234"
+
+app3_subdir: webinterface
+app3_dir: "{{ repo_dest }}/{{ app3_subdir }}"

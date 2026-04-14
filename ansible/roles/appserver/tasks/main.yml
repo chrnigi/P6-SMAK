@@ -8,5 +8,8 @@
       - github.com/greenpau/caddy-security
     caddy_manage_systemd_env_file: true
 
-- name: whatevertask
+- name: Database endpoint deployment
   include_tasks: dbendpoint.yml
+
+- name: Webinterface deployment
+  include_tasks: webinterface.yml

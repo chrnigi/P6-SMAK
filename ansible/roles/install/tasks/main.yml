@@ -43,3 +43,9 @@
     name: "{{ db_packages }}"
     state: present
   when: "'185' in inventory_hostname"
+
+- name: Ensure appserver packages are installed
+  ansible.builtin.package:
+    name: "{{ appserver_packages }}"
+    state: present
+  when: "'111' in inventory_hostname or '114' in inventory_hostname"
