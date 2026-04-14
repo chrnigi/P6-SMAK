@@ -22,6 +22,9 @@
 
 - name: Set authorized key for ansible and current login user
   ansible.posix.authorized_key:
-    user: "ansible"
+    user: "{{ item }}"
     state: present
     key: "{{ ansible_pubkey }}"
+  loop: "{{ ['ansible', login_user] | unique }}"
+  vars:
+    login_user: "{{ ansible_user | default(ansible_ssh_user) }}"

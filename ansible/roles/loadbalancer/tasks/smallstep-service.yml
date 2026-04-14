@@ -1,0 +1,5 @@
+- name: Enable step-ca
+  systemd:
+    name: step-ca
+    enabled: true
+    state: started

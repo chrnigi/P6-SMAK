@@ -1,0 +1,23 @@
+- name: Check if CA already initialized
+  stat:
+    path: "{{ step_home }}/config/ca.json"
+  register: ca_config
+
+- name: Initialize Smallstep CA
+  command: >
+    step ca init
+    --name "{{ step_ca_name }}"
+    --dns "{{ step_dns_name }}"
+    --address "{{ step_listen_address }}"
+    --provisioner "{{ step_provisioner }}"
+    --deployment-type standalone
+    --password-file /root/step_ca_pass
+  when: not ca_config.stat.exists
+
+- name: Write CA password file
+  copy:
+    content: "{{ step_ca_password }}"
+    dest: /root/step_ca_pass
+    owner: root
+    group: root
+    mode: '0600'

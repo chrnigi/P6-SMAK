@@ -1,5 +1,5 @@
 - name: Configure Caddy
-  hosts: caddy
+  hosts: appserver
   become: true
   roles:
-    - caddy
+    - appserver

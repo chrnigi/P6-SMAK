@@ -28,3 +28,12 @@
     name: "{{ caddy_service }}"
     state: started
     enabled: true
+
+- name: Init SmallStep
+  include_tasks: init.yml
+
+- name: Install SmallStep
+  include_tasks: install.yml
+
+- name: Activate SmallStep service
+  include_tasks: smallstep-service.yml
