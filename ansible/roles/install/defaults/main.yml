@@ -16,6 +16,12 @@ db_packages:
 
 appserver_packages:
   - node-typescript
+  - build-essential
+  - cmake
+  - clang
+  - ninja-build
+  - acl # Access Control Lists - for use with unpriv-unpriv ansible
+  - stockfish
 
 docker_repo_uri: "https://download.docker.com/linux/debian"
 docker_keyring_path: "/etc/apt/keyrings/docker.asc"

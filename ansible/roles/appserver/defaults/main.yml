@@ -22,5 +22,8 @@ start_command: "java -jar target/chess-0.0.1-SNAPSHOT.jar"
 smak_username: "smak"
 smak_password: "smaksmak1234"
 
+app2_subdir: ChessRest
+app2_dir: "{{ repo_dest }}/{{ app2_subdir }}"
+
 app3_subdir: webinterface
 app3_dir: "{{ repo_dest }}/{{ app3_subdir }}"

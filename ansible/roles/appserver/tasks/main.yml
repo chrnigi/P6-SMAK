@@ -2,7 +2,7 @@
   ansible.builtin.include_role:
     name: paultibbetts.caddy
   vars:
-    caddy_caddyfile_template: "Caddyfile.j2"
+    caddy_caddyfile_template: "{{ playbook_dir }}/../roles/appserver/templates/Caddyfile.j2"
     caddy_install_method: download
     caddy_plugins:
       - github.com/greenpau/caddy-security
@@ -13,3 +13,6 @@
 
 - name: Webinterface deployment
   include_tasks: webinterface.yml
+
+- name: Analysis/pgndpoint deployment
+  include_tasks: pgndpoint.yml
